@@ -21,6 +21,7 @@ FILET_MIGNON_STAKING_CHALLENGE = {
     'tNcibAmoSQqiZYTEu52LPV3KadPQJKZUVpQe3ji3cdGMv8uB6ByyhMsfTnCYdKxUXUNjFGMdyW7dBVmDpFEFdjxVGpekAKfrsHc9Pbk8pXY2MCLQwNqgBbWHcWWyqhVjCdh7X6zVHSu87A': 'whataday2day#1271'
     'tNcibPYLvy6MvM9XEfm2ECoibzcsRNv7cF5AcGpiQa5zs3bpmZF8DiHkvPvRcr6iGe2hsii6mE5ufXsdCdfZdA51GuuDaDYaVZJwSwcTiYRw1aJ2WMgm3JSLPYUPQ1bTBieQveWwUT45dK': 'Tyler34214#4119',
     'tNciN3JM45idr84C8bjKXJXbWCQXWRSuDYq2ZZg6HbtT1g6dgvwBScPc8WL26VdfWzf7okUgaFktd63KtP2zM7X7pRgNDhBXHaEseUJ18NSqzuVdgtv1X5YBJivS8i2masYzaUszVdjfzJ': 'Q.Margo#8900',
+    'tNciczxpMfZ4eW1ZPP9NVK2vxcm9cCHvTBWMe8Nskn2A25P1YqcdvFCD5LvgngraiCmAsnC8zWAiv5pwMYjrUwpMNYDePMQYiXX7HVMjrnB1JkEckyayvsAm2Bo4EQBWbHXD5Cxp65PZy5': 'Marius | Ubik Capital#9009',
 }
 
 # For Community Members
