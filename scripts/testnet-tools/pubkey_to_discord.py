@@ -47,7 +47,8 @@ STAKING_CHALLENGE = {
     'tdNDfKew3aEd75Y8GTFrVznKp5YrB8EXA13rmG8H2mfY7D9V28ntvV1Sw5XyM7ZCeqd1nrfwQryE8QHcpfYfq7gubLNJTczTsKLV7o3zGkF2Ja1acQq9jMAsvtFdcyp6rtpE4xGdaj2qGv': 'OpenStaking#7372',
     'tdNEBeQAX4osSqGW99hvKcqwpWAAq7Q8wTTy68cqHutVFKdmL3jDb7dry3wcxphosgLTNFBbJNv3d1ffncSAZ9m8xiVv1sfV2mUYREZHN5MNbgVNCpn55me3mzvRBrerqxosyzoVkoHFKW': 'hashquark#8413',
     'tdNDq71GArzPdvgDePf98fuxdULNDRTeHEDCraKrycPessvHCmXqtFsjamHSaMKPKkC96Qwgko5bftccnyW4DNB4jRwvpHKFXgh4c4NJ8qPUqHZXXjp1HvCk5KYkqQ9t2SiX8npyCs4SBE': 'ZLH#1783',
-    'tdNDq8RRgnL8uBg7Fh4ursAjtfxpp1M6dWxJHAEXgFFhLCicwLShjMJGG2woqL4SWnen8rkAPDW284nKLw2B8ffnkhrnPFursquvqzPaK44146U4CifaKnXZPzrEd3mJMZskmL1NxigXMS': 'AvaLuo#3910'
+    'tdNDq8RRgnL8uBg7Fh4ursAjtfxpp1M6dWxJHAEXgFFhLCicwLShjMJGG2woqL4SWnen8rkAPDW284nKLw2B8ffnkhrnPFursquvqzPaK44146U4CifaKnXZPzrEd3mJMZskmL1NxigXMS': 'AvaLuo#3910',
+    'tdNEMBgZm4uhCW8juWLwBDwXT4sqr2sAxjmUfpxeoUAd38ZZVmfiDXUJraxLxWpHyY2fy69BViQpKwNUVsPPL2ETRiQ9DFNSShfmTbY3XAjKjZJ9LHpF542c4cg5PSVNPds2PzaZVobnVE': 'OranG3'
 }
 
 # For Community Members
