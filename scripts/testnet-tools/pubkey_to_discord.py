@@ -40,7 +40,8 @@ STAKING_CHALLENGE = {
     'tdNDowo9QyHT1KnkQP4173GMona8MdrQ7UbG1E1BxdUgyxAMh9KK2w9tfcBcfxWgQzH29JtZpFZ7MekRtytfR5no6RjdnKdgrx5PByfEXhtZzX3HX74qVEL33qnDfdf6gqMpCxjjgLHECY': 'niuniu#9001',
     'tdNEGM3uEHJVCb2P1685iz6BW1CydeC3C3FvqbuuaYGe2QGi6TJ5qHHRd5FPXg46RrXq37zx3GwEMtX9tUUC7acwSpMWyq9e7bAjXqMdi2tyra5V6eb1xYcPgiJxvjcLKNPSdzCe5phFxU': 'Yfdfcu#2293',
     'tdNEMETdggLfdoTmQ4smQhDm1ZFHLPAgRxtujM767VuWBiLU3xL1r7QXhYv1gLmw92T9oJLtgN55SyerY9ui8hFx9Z8kHfbA3vYEBSAefGHHSnPGkJJhTKefUZiprFvscNXx2NQNh7B2kV': 'CrisF#3405',
-    'tdNDiwuiTmv6aypqJ6ko4ALcwssDv6E8bEnNHEaVxPFZTpfFX4zqBPahv6Bji24iM2APDuUkFmCbtoK8kbyePPSJJRMt8TowaKRBaHAgz5noMeffrt69C1XkwYgWGQSZCF4KcSkP8gF3e7': 'masupilami#4665'
+    'tdNDiwuiTmv6aypqJ6ko4ALcwssDv6E8bEnNHEaVxPFZTpfFX4zqBPahv6Bji24iM2APDuUkFmCbtoK8kbyePPSJJRMt8TowaKRBaHAgz5noMeffrt69C1XkwYgWGQSZCF4KcSkP8gF3e7': 'masupilami#4665',
+    'tdNDy9G4MGzewqgcw4ptE9XZcftp9wVKoVFua9SWCsqwMvCJDmesdN1J1bbHiDMfDaDbHd5zk4AFBrJxBo8CT8NMDQ6BAs9ysy1d9aRLQiFSySenH7yhNLC2FdQEoxN2hPSRGDkU5hsP2g': 'bgibson#0713'
 }
 
 # For Community Members
