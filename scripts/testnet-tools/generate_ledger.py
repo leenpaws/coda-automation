@@ -12,113 +12,114 @@ include Make (struct
     (* VRF Account *)
     [ { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNciXRzP5ViAqK6TbwfBhNkuppA2XVatF6uEvWNrrh6eBY7hsYbQfQTBkfNjpQZuY3s4jU5LYD3ZBhM2z4mbvmHeHQvCHqe7vwr2wQH4gJLSv14tf6iWHyoRWHZ4XS2s6oxzBFW3xB5Nvn"
-      ; balance= 0
+            "tdNEJsZZgAKgcuuqtRs8cb3SDJAfTdwpbAdg6aNnV2WZXftd2USKNFc6VPU7KtFZD1JNnCzWq3ygaioNNxqw1d6DW4KyR8MhNthdLDQMYK2nwz8zeCWUm6EQpREnvQDw11khpbKoyBX9uJ"
+      ; balance= 1000
       ; delegate= None }
       (* O(1) Proposer Account Pair 1 *)
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNciTDiJziUovrKA4KKs7wN1XNhV8BW1YUvcyoo33RdrtPa5fKSKJSqFTgo13aNscVYTBa2kRmPnNGCdsuAqsSw6YJSn1GKVuqfpTDxXkifm6PJoVmVN3Gd1vBPKzdpeyuTBULfwsjmFxB"
+            "tdNDky3tTyWUdf1iccjh8zqga1yATQQ6r5Q7qdbtaVHntT9ncGsgRfHiqHsJsNiXUSzSTDyq2FRK3eJC3XNvf4KBRy7KELNKxQCsj7ycgV3XxPydzALPMmjFJ4v7mASXLMYYaAK6Dkqk5f"
       ; balance= 10000000
       ; delegate=
           Some
             (Public_key.Compressed.of_base58_check_exn
-               "tNcihXwbnb6Sv3MwW2rbhXDS4TNSn75tnDZjzUKsjgFSmVJUycLFftqnSZmikKBKEo7KHeLviRpsZw3XUh6zDZwtdH8zk9mhNG6ydL8pqrFM5FdkeV9fYdtvysVC29PSKyb97vK7jkJB5d")
+               "tdNDs39Vk2rLLy9o43yNVBFrouEY9p49SHQjSyV4vvX7wpi52x1k3Eykg8soVmwLFDqJBfF3vvKWZuz2xjaQT9opUA5P2miTpJwP1RGu9vm2mM1gFcZxNd1fHBY8Jggezr7We9qCShZwCY")
       }
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNcihXwbnb6Sv3MwW2rbhXDS4TNSn75tnDZjzUKsjgFSmVJUycLFftqnSZmikKBKEo7KHeLviRpsZw3XUh6zDZwtdH8zk9mhNG6ydL8pqrFM5FdkeV9fYdtvysVC29PSKyb97vK7jkJB5d"
-      ; balance= 0
+            "tdNDs39Vk2rLLy9o43yNVBFrouEY9p49SHQjSyV4vvX7wpi52x1k3Eykg8soVmwLFDqJBfF3vvKWZuz2xjaQT9opUA5P2miTpJwP1RGu9vm2mM1gFcZxNd1fHBY8Jggezr7We9qCShZwCY"
+      ; balance= 1000
       ; delegate= None }
       (* O(1) Proposer Account Pair 2 *)
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNciGGG62uN18dV5YJrr2SyGWsGbQQhBn5fSEBJ5967KBikntN6hhnCw3Zc1aQCWi4FQDSZMS1d1aq18iKUVnJdDi87ZtBsvgvS1YRo9rWFyX3pUxeM7mntZmA387gztnXT4xfqYSwSh3v"
+            "tdNEHktzZep3DHVJJxvvtVD91ZoSvoLgtxAL7fCMGZC1Qtdso28DuuossMggsBgJkbhptzH2cFuQ7U5n6FaZraxA4sB6ex3xDHF8gEgdNYisfAg5n7eHUz4AAikM866fc7hCk9n7wrwMQj"
       ; balance= 10000000
       ; delegate=
           Some
             (Public_key.Compressed.of_base58_check_exn
-               "tNci4GbJQMkTxsoZyVtn86HtLYA6KKxcR1ujoy9da7QWzw7QZgiL7MTxXbb3cxDx7nRpeFBBJ7m8SSVRR3Ua3tbiDAiARBYW6x7DFf56jTNjAypFbq69FvJsKBubKb5GhnH27qR6FjJeEA")
+               "tdNE2pXYz8vGxvqVjcA59pw2qfnkotFdKeVnnmKy1Loh9HXGnoHnLn24Mvsci8GQM1EdMHSs5TCWxVjGAU1ysfKSWZ9kcuJV6Ez2bExyXdqy2kRg5rJCHFX6Ek6oRNve2WdmDnvtswjtRZ")
       }
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNci4GbJQMkTxsoZyVtn86HtLYA6KKxcR1ujoy9da7QWzw7QZgiL7MTxXbb3cxDx7nRpeFBBJ7m8SSVRR3Ua3tbiDAiARBYW6x7DFf56jTNjAypFbq69FvJsKBubKb5GhnH27qR6FjJeEA"
-      ; balance= 0
+            "tdNE2pXYz8vGxvqVjcA59pw2qfnkotFdKeVnnmKy1Loh9HXGnoHnLn24Mvsci8GQM1EdMHSs5TCWxVjGAU1ysfKSWZ9kcuJV6Ez2bExyXdqy2kRg5rJCHFX6Ek6oRNve2WdmDnvtswjtRZ"
+      ; balance= 1000
       ; delegate= None }
       (* O(1) Proposer Account Pair 3 *)
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNcij94DDKfuVRL2VrK9HQVeyJPwFK3Sz6bnpGWgme24Cqsgup1cpfb19XKEfkiUmRrUJ6CrJ8C7Bgz1w6mzeRvQ9BXuTsKaEc1yvuJUoDioGVXpuGowYVXw4KC1mG6RsqPYF4oH7iWcHY"
+            "tdNDeLpBdTppcxxoxJzgAQFpmzzMkNjWA9bhcCLDDzkd6sR4y8rhpKfXrfMgxMviNK5ncc7UVx4effUxpNNqpwr7SDtopAin4dSb4wkDXRAax7dgnvTe5p7sp7DSmKKYPe6Vp9hEq1En9i"
       ; balance= 10000000
       ; delegate=
           Some
             (Public_key.Compressed.of_base58_check_exn
-               "tNciedhUUQQ2db9aZYhLjFTtPenzBTJsABVWemDeevGcfn2XvbaGpUDcoVdKxNRhfSEaUJCrN6iCht2zsRUH1yRnWpTfLA8CtC8yCDDrxvLNzRuSSrGMvzYEX5z3wt2SdmqJVVfTJaqNSu")
+               "tdNDypcUkVoNSsbdhT9ytXwVxxU2ECEhaLsgq2ceiBzRxQonBtxsofVs9BAjb43BrWf5rUs5ewRyogkiaWddSkGNhXQHCk8FtJ4HDUfPARHMYstvEP2h9CWuE5t1MdUD1Q9tXDPJRMy2qq")
       }
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNciedhUUQQ2db9aZYhLjFTtPenzBTJsABVWemDeevGcfn2XvbaGpUDcoVdKxNRhfSEaUJCrN6iCht2zsRUH1yRnWpTfLA8CtC8yCDDrxvLNzRuSSrGMvzYEX5z3wt2SdmqJVVfTJaqNSu"
-      ; balance= 0
+            "tdNDypcUkVoNSsbdhT9ytXwVxxU2ECEhaLsgq2ceiBzRxQonBtxsofVs9BAjb43BrWf5rUs5ewRyogkiaWddSkGNhXQHCk8FtJ4HDUfPARHMYstvEP2h9CWuE5t1MdUD1Q9tXDPJRMy2qq"
+      ; balance= 1000
       ; delegate= None }
       (* O(1) Proposer Account Pair 4 *)
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNciMTgwisDWsms9pEiJvbRXWpCnp5vFQRJd417w1aN15ofzCEFQA37JC4yEoNLNw9MxP12uZVv4Wm5mcwCUryD6zr2DpZGiaBvrWikHTreYMbE4BViMB9d7BUGxLExtoC8cc1LjQFXPgG"
+            "tdNDmQzS1Vy6TeTND8cg1h9Swr5CJNTa666Yxj9QHKAQ557PP2HebGX944HQ71usJmLYCXRPXy1X9RRs4eDxwNFf5koHMsBYjK3MSsBMFD1g7VuTXm1tVNze33VrUbDdiTuWecdXBnMS9R"
       ; balance= 10000000
       ; delegate=
           Some
             (Public_key.Compressed.of_base58_check_exn
-               "tNcibGJshuL8dqvQitNyLfndYsrLRffYBfqYS8CsgnCyUMdD8MEmzLPiZ5f3Sv7i3KAYCJygNMvQCULHuZBXE6swQTCfMiHvkL6eG4cmDBQ1NjdRjVeqMEv5zEW76sxduKbVG26LExKYj8")
+               "tdNDsh6jrSfinUQdrUXxD4KSNbTy9HYL5eX83RXaYSEB6CQMEuyTrdb8vkUuKdpqLeNmpw7qppNKcNoZzKAJDREaXAFT3iz5gvJbxVoXQQ8A8En9k24QBD9pjbM3WEVY4Az5arf93qnyGW")
       }
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNcibGJshuL8dqvQitNyLfndYsrLRffYBfqYS8CsgnCyUMdD8MEmzLPiZ5f3Sv7i3KAYCJygNMvQCULHuZBXE6swQTCfMiHvkL6eG4cmDBQ1NjdRjVeqMEv5zEW76sxduKbVG26LExKYj8"
-      ; balance= 0
+            "tdNDsh6jrSfinUQdrUXxD4KSNbTy9HYL5eX83RXaYSEB6CQMEuyTrdb8vkUuKdpqLeNmpw7qppNKcNoZzKAJDREaXAFT3iz5gvJbxVoXQQ8A8En9k24QBD9pjbM3WEVY4Az5arf93qnyGW"
+      ; balance= 1000
       ; delegate= None }
       (* O(1) Proposer Account Pair 5 *)
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNciUfrbXAYtEfcMhW8nYdh9DsFfGenEYNgqRq5vmzBnRgaQd4fDYVEt8VhfbZGQc7brDWCkvNrUdxbfbV9mc7pEN6GG6hEkqNAbXuz3YtKtQPLefz8YMcbLhdE1ninWdkym5ytaKNteCa"
+            "tdNDx1Ct9JvFYHbwtpggvsMgpZGn2BoG3ny41r5CNXhDiaYcdgjQLYTrrmH5BEAqyvTtvbzEeQFCGKcNUp9HWPyy1P1DdXTHwnPsNLyvf19LvaBwzyBZxQqPQNp6vSF9XRULmJPLGkvg62"
       ; balance= 10000000
       ; delegate=
           Some
             (Public_key.Compressed.of_base58_check_exn
-               "tNci77WCk8buqGTyrQb9ehAp2fwHe4BUjN4kTGZVvG3mPUhntKKDBf4NMiR2GEuVwHaD28KyhP8zqVXtfAv66h7D3TKE8PTnNnsA154GDHLodnXT6q25a7mGanZjSQwhGcAVChjN4bGw9y")
+               "tdNDjjAwyjgvNgU1x8uWs1n44H8vK7UGrRLvXzkcv8iC3Jw9A1B1UDUZndgBZh6zTb23pNatt7ujfTbCVjiihTZRMJcErZSkz93qE5Ue5VpAJsvaQvpHQGj3XexP2fK6i6xMfQArSvcXWV")
       }
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNci77WCk8buqGTyrQb9ehAp2fwHe4BUjN4kTGZVvG3mPUhntKKDBf4NMiR2GEuVwHaD28KyhP8zqVXtfAv66h7D3TKE8PTnNnsA154GDHLodnXT6q25a7mGanZjSQwhGcAVChjN4bGw9y"
-      ; balance= 0
+            "tdNDjjAwyjgvNgU1x8uWs1n44H8vK7UGrRLvXzkcv8iC3Jw9A1B1UDUZndgBZh6zTb23pNatt7ujfTbCVjiihTZRMJcErZSkz93qE5Ue5VpAJsvaQvpHQGj3XexP2fK6i6xMfQArSvcXWV"
+      ; balance= 1000
       ; delegate= None }
       (* Faucet Key *)
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNciczxpMfZ4eW1ZPP9NVK2vxcm9cCHvTBWMe8Nskn2A25P1YqcdvFCD5LvgngraiCmAsnC8zWAiv5pwMYjrUwpMNYDePMQYiXX7HVMjrnB1JkEckyayvsAm2Bo4EQBWbHXD5Cxp65PZy5"
+            "tdNE67M9Snd4KF2Y3xgCQ8Res8LQxckx5xpraAAfa9uv1P6GUy8a6QkXbLnN8PknuKDknEerRCYGujScean4D88v5sJcTqiuqnr2666Csc8QhpUW6MeXq7MgEha7S6ttxB3bY9MMVrDNBB"
       ; balance= 5000000
       ; delegate=
           Some
             (Public_key.Compressed.of_base58_check_exn
-               "tNcihXwbnb6Sv3MwW2rbhXDS4TNSn75tnDZjzUKsjgFSmVJUycLFftqnSZmikKBKEo7KHeLviRpsZw3XUh6zDZwtdH8zk9mhNG6ydL8pqrFM5FdkeV9fYdtvysVC29PSKyb97vK7jkJB5d")
+               "tdNDs39Vk2rLLy9o43yNVBFrouEY9p49SHQjSyV4vvX7wpi52x1k3Eykg8soVmwLFDqJBfF3vvKWZuz2xjaQT9opUA5P2miTpJwP1RGu9vm2mM1gFcZxNd1fHBY8Jggezr7We9qCShZwCY")
       }
       (* Echo Key *)
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
-            "tNciUTDQupJTEjEgFefiGBYuXNF8asTBSEimH2uBjkmq1vMEDMnzQyaVF9MgRmecViUUzZwPMQCDVoKLFmPeWG9dPY7o7erkLDFRWnoGpNGUk3H5r3rHtyfrG17Di6tx9VqQMq6rehPmAu"
+            "tdNDk6tKpzhVXUqozR5y2r77pppsEak7icvdYNsv2dbKx6r69AGUUbQsfrHHquZipQCmMj4VRhVF3u4F5NDgdbuxxWANULyVjUYPbe85fv7bpjKRgSpGR3zo2566s5GNNKQyLRUm12wt5o"
       ; balance= 5000000
       ; delegate=
           Some
             (Public_key.Compressed.of_base58_check_exn
-               "tNcihXwbnb6Sv3MwW2rbhXDS4TNSn75tnDZjzUKsjgFSmVJUycLFftqnSZmikKBKEo7KHeLviRpsZw3XUh6zDZwtdH8zk9mhNG6ydL8pqrFM5FdkeV9fYdtvysVC29PSKyb97vK7jkJB5d")
+               "tdNDs39Vk2rLLy9o43yNVBFrouEY9p49SHQjSyV4vvX7wpi52x1k3Eykg8soVmwLFDqJBfF3vvKWZuz2xjaQT9opUA5P2miTpJwP1RGu9vm2mM1gFcZxNd1fHBY8Jggezr7We9qCShZwCY")
       }
       (* User Stake Keys *)
 """
 
 total_user_accounts = len(pubkey_to_discord.FILET_MIGNON_STAKING_CHALLENGE)
 
-coda_per_user = int(40000000 / total_user_accounts)
+coda_per_user = int(80000000 / total_user_accounts)
 
 id = 1
-for (user_key, discord_id) in pubkey_to_discord.FILET_MIGNON_STAKING_CHALLENGE.items():
+for (user_key,
+     discord_id) in pubkey_to_discord.FILET_MIGNON_STAKING_CHALLENGE.items():
     offline_key = offline_keys.OFFLINE_PUBLIC_KEYS[id]
     content += """
       (* Offline/Online User Keys: %s   %s of %s *)
@@ -134,8 +135,9 @@ for (user_key, discord_id) in pubkey_to_discord.FILET_MIGNON_STAKING_CHALLENGE.i
     ; { pk=
           Public_key.Compressed.of_base58_check_exn
             "%s"
-      ; balance= 1
-      ; delegate= None }""" % (discord_id, id,  total_user_accounts, offline_key, coda_per_user, user_key, user_key)
+      ; balance= 1000
+      ; delegate= None }""" % (discord_id, id, total_user_accounts,
+                               offline_key, coda_per_user, user_key, user_key)
     id += 1
 
 content += """]
