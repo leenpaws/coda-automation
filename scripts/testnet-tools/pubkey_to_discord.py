@@ -50,9 +50,7 @@ STAKING_CHALLENGE = {
     'tdNDq8RRgnL8uBg7Fh4ursAjtfxpp1M6dWxJHAEXgFFhLCicwLShjMJGG2woqL4SWnen8rkAPDW284nKLw2B8ffnkhrnPFursquvqzPaK44146U4CifaKnXZPzrEd3mJMZskmL1NxigXMS': 'AvaLuo#3910',
     'tdNEMBgZm4uhCW8juWLwBDwXT4sqr2sAxjmUfpxeoUAd38ZZVmfiDXUJraxLxWpHyY2fy69BViQpKwNUVsPPL2ETRiQ9DFNSShfmTbY3XAjKjZJ9LHpF542c4cg5PSVNPds2PzaZVobnVE': 'OranG3',
 
-'tdNENEjBATBq6eLjfgc8QP23ePgyfQkYcdutjNysgH57Ms1QfXNo6qusm1eEprszssinm8v1fsPL5ZiNBeKf2FTJGNAyXHsREryG2xDYGRmQUWYm7aFcMMAPLZpASXjGmYWMjKFGFMgEuf': 'tarcieri | iqlusion.io#0590',
-    'tNciBBcEcajd4AFCAiSLWvwg9X3fCUT57X5h9UhVuDhh3UrZ26nxCeVEzjFCN6uVhy2CFSqUjWqGsZ2yQno64nqE6SWPbqVr1WX2JiBQ23mBCmtkViPxCQUdq2EJZPyMDx6tWbazW2xgYo': 'garethtdavies#4963',
-    'tNcigBkK4MhTkATJvbp2RNuwch8RE3w1XxMtKZdBf8GHgqoyrBx7qUuL3aNJsDE6KWNHdzn1RroM3tf6mkKQm979K8JD8PB4Kt7tNzptAER1NFHmnUbKYKgP6cvJbFAnAzU6v1ymRtU1SQ': 'jspadave'
+'tdNENEjBATBq6eLjfgc8QP23ePgyfQkYcdutjNysgH57Ms1QfXNo6qusm1eEprszssinm8v1fsPL5ZiNBeKf2FTJGNAyXHsREryG2xDYGRmQUWYm7aFcMMAPLZpASXjGmYWMjKFGFMgEuf': 'tarcieri | iqlusion.io#0590'
 }
 
 # For Community Members
