@@ -113,13 +113,12 @@ include Make (struct
       (* User Stake Keys *)
 """
 
-total_user_accounts = len(pubkey_to_discord.FILET_MIGNON_STAKING_CHALLENGE)
+total_user_accounts = len(pubkey_to_discord.STAKING_CHALLENGE)
 
 coda_per_user = int(80000000 / total_user_accounts)
 
 id = 1
-for (user_key,
-     discord_id) in pubkey_to_discord.FILET_MIGNON_STAKING_CHALLENGE.items():
+for (user_key, discord_id) in pubkey_to_discord.STAKING_CHALLENGE.items():
     offline_key = offline_keys.OFFLINE_PUBLIC_KEYS[id]
     content += """
       (* Offline/Online User Keys: %s   %s of %s *)
