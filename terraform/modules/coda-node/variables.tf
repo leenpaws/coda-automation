@@ -55,7 +55,7 @@ variable "port_dht" {
 variable "port_libp2p" {
   description = "Port libp2p protocol communicates over"
   type        = number
-  default     = 28675
+  default     = 8303
 }
 
 variable "port_ql" {
