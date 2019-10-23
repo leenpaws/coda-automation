@@ -59,4 +59,8 @@ do
   coda advanced unsafe-import -privkey-path $file
 done
 
-coda daemon -peer $DAEMON_PEER -rest-port $DAEMON_REST_PORT -external-port $DAEMON_EXTERNAL_PORT -metrics-port $DAEMON_METRICS_PORT
+coda daemon -discovery-port 8303 \
+      -peer /ip4/52.39.56.50/tcp/8303/ipfs/12D3KooWHMmfuS9DmmK9eH4GC31arDhbtHEBQzX6PwPtQftxzwJs \
+      -peer /ip4/18.212.230.102/tcp/8303/ipfs/12D3KooWAux9MAW1yAdD8gsDbYHmgVjRvdfYkpkfX7AnyGvQaRPF \
+      -peer /ip4/52.13.17.206/tcp/8303/ipfs/12D3KooWCZA4pPWmDAkQf6riDQ3XMRN5k99tCsiRhBAPZCkA8re7 \
+      -rest-port $DAEMON_REST_PORT -external-port $DAEMON_EXTERNAL_PORT -metrics-port $DAEMON_METRICS_PORT
