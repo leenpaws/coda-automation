@@ -63,7 +63,7 @@ module "this" {
 
   image_id             = data.aws_ami.amazon_linux_ecs.id
   instance_type        = var.cluster_instance_type
-  security_groups      = [module.vpc.default_security_group_id, aws_security_group.allow_prometheus_9090.id, aws_security_group.allow_egress.id, aws_security_group.allow_ssh.id]
+  security_groups      = [module.vpc.default_security_group_id, aws_security_group.allow_prometheus_9090.id, aws_security_group.allow_egress.id, aws_security_group.allow_ssh.id, aws_security_group.allow_lotsa_ports.id]
   iam_instance_profile = module.ec2-profile.this_iam_instance_profile_id
   user_data            = data.template_file.user_data.rendered
   key_name = var.cluster_ssh_key_name

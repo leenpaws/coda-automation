@@ -36,3 +36,22 @@ resource "aws_security_group" "allow_prometheus_9090" {
     cidr_blocks     = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_security_group" "allow_lotsa_ports" {
+  name        = "ecs_allow_lotsa_ports"
+  description = "Allow Prometheus Ingress"
+  vpc_id      = "${module.vpc.vpc_id}"
+
+  ingress {
+    from_port       = 10000
+    to_port         = 11000
+    protocol        = "TCP"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+  ingress {
+    from_port       = 10000
+    to_port         = 11000
+    protocol        = "UDP"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+}

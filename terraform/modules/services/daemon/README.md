@@ -41,11 +41,17 @@ The manual commands to release each container are the following:
 ### Coda-Daemon Container
 
 *(From the root of the `CodaProtocol/coda` repository)*
-`./scripts/release-docker.sh -s coda-daemon -v <major>.<minor>.<patch>`
+`./scripts/release-docker.sh -s coda-daemon -v <major>.<minor>.<patch> --extra-args "--build-arg coda_version=<CODA_VERSION> --build-arg deb_repo=<deb-repo>"`
+
+Example:
+`./scripts/release-docker.sh -s coda-daemon -v 0.0.10-beta4 --extra-args "--build-arg coda_version=0.0.10-beta4-fff3b856 --build-arg deb_repo=release"`
+
+The `--extra-args` argument is for passing additional parameters directly to the `docker build` command. It is used here to pass the required Dockerfile variable `coda_version` but can also be used to override Dockerfile variables with default values like so `--build-arg deb_repo=release`
 
 ### daemon Container
 
 *(From the root of the `CodaProtocol/coda-automation` repository)*
-`./scripts/release-docker.sh -s daemon -v <major>.<minor>.<patch> --extra-args "--build-arg base_image_tag=<docker tag created in first step>"`
+`./scripts/release-docker.sh -s daemon -v <major>.<minor>.<patch> --extra-args "--build-arg base_image_tag=<docker tag created in first step> "`
 
-The `--extra-args` argument is for passing additional parameters directly to the `docker build` command. It is used here to pass the required Dockerfile variable `base_image_tag` but can also be used to override Dockerfile variables with default values like so `--build-arg deb_repo=release`
+Example:
+`./scripts/release-docker.sh -s daemon -v 0.0.10-beta4 --extra-args "--build-arg base_image_tag=0.0.10-beta4"`
