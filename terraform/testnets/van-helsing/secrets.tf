@@ -7,7 +7,7 @@ data "aws_secretsmanager_secret_version" "current_testnet_coda_privkey_pass" {
 }
 
 data "aws_secretsmanager_secret" "discord_api_key" {
-  name = "coda-services/faucet/discord_api_key/staging"
+  name = "coda-services/faucet/discord_api_key/production"
 }
 
 data "aws_secretsmanager_secret_version" "current_discord_api_key" {
