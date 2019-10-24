@@ -8,8 +8,8 @@ import json
 from collections import defaultdict, Counter
 from itertools import chain
 import functools
-# from LeaderboardUpload import upload, sheets
-# from LeaderboardUpload.metrics import latest, no_update, max_metric, add
+from LeaderboardUpload import upload, sheets
+from LeaderboardUpload.metrics import latest, no_update, max_metric, add
 
 #  Note: new metrics should be in the following form:
 #     {
@@ -102,10 +102,10 @@ def main():
     window_times = [
         # (datetime.datetime(year=2019, month=10, day=8, hour=14, tzinfo=timezone), datetime.timedelta(hours=1)),
         # (datetime.datetime(year=2019, month=10, day=10, hour=17, tzinfo=timezone), datetime.timedelta(hours=1)),
-        (datetime.datetime(year=2019, month=10, day=10, hour=21, tzinfo=timezone), datetime.timedelta(hours=1)),
-        (datetime.datetime(year=2019, month=10, day=12, hour=9, tzinfo=timezone), datetime.timedelta(hours=1)),
-        (datetime.datetime(year=2019, month=10, day=15, hour=21, tzinfo=timezone), datetime.timedelta(hours=1)),
-        (datetime.datetime(year=2019, month=10, day=16, hour=9, tzinfo=timezone), datetime.timedelta(hours=1))
+        (datetime.datetime(year=2019, month=10, day=24, hour=21, tzinfo=timezone), datetime.timedelta(hours=1)),
+        (datetime.datetime(year=2019, month=10, day=26, hour=9, tzinfo=timezone), datetime.timedelta(hours=1)),
+        (datetime.datetime(year=2019, month=10, day=29, hour=21, tzinfo=timezone), datetime.timedelta(hours=1)),
+        (datetime.datetime(year=2019, month=10, day=30, hour=9, tzinfo=timezone), datetime.timedelta(hours=1))
     ]
     logger.debug(f"Using these windows: {window_times}")
 
@@ -121,8 +121,8 @@ def main():
         "Blocks Produced (Global)": metrics.blocks_produced,
         #"SNARK Fees Collected (Global)": metrics.snark_fees_collected,
         #"Transactions Sent (Global)": metrics.transactions_sent,
-        # "Transactions Received (Global)": metrics.transactions_received,
-        "Transactions Sent Echo (Global)": metrics.transactions_sent_echo
+        #"Transactions Received (Global)": metrics.transactions_received,
+        #"Transactions Sent Echo (Global)": metrics.transactions_sent_echo
     }
     logger.debug(f"Running with these windowed metrics: {global_metrics.keys()}")
 
@@ -133,26 +133,26 @@ def main():
     print(json.dumps(report, indent=2))
     
 
-    # SHEET_ID = ""
+    SHEET_ID = '1-K3avG_PEcuLfAq2EBIU_QhaqwK9DgtG42u7wq0nk-M'
     
-    # combine_fns = {
-    #     "Blocks Produced (Windowed)": latest,
-    #     "SNARK Fees Collected (Windowed)": latest,
-    #     "Transactions Sent (Windowed)": latest,
-    #     "Blocks Produced (Global)": latest,
-    #     "Transactions Sent Echo (Global)": latest
+    combine_fns = {
+        "Blocks Produced (Windowed)": latest,
+        "SNARK Fees Collected (Windowed)": latest,
+        "Transactions Sent (Windowed)": latest,
+        "Blocks Produced (Global)": latest,
+        "Transactions Sent Echo (Global)": latest
 
-    # }
-    # credentials = sheets.get_credentials()
-    # uploaded_metrics = upload.upload_metrics(
-    #     credentials,
-    #     SHEET_ID,
-    #     "Metrics2.2",
-    #     combine_fns,
-    #     report)
+    }
+    credentials = sheets.get_credentials()
+    uploaded_metrics = upload.upload_metrics(
+        credentials,
+        SHEET_ID,
+        "Metrics2.2",
+        combine_fns,
+        report)
     
-    # print(json.dumps(uploaded_metrics, indent=2))
-    # return uploaded_metrics
+    print(json.dumps(uploaded_metrics, indent=2))
+    return uploaded_metrics
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
 from __future__ import print_function
-import sheets as sheets_api
+from LeaderboardUpload import sheets as sheets_api
 
 DEFAULT_RANGE = "A1:Z"
 
