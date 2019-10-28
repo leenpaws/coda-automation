@@ -53,7 +53,6 @@ introspectSchema(link)
       if (req.headers["accept"] == "application/json") {
         graphqlExpress({ schema: transformSchema(schema, transformers) })(req, res, next)
       } else {
-        // graphiqlExpress({ endpointURL: '/graphql' })(req, res, next)
         res.setHeader('Content-Type', 'text/html');
         res.write(graphiqlString);
         res.end();
