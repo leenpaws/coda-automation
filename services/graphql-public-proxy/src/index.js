@@ -11,7 +11,14 @@ const {HttpLink} = require('apollo-link-http');
 const fetch = require('node-fetch');
 const fs = require('fs');
 
-const link = new HttpLink({ uri: 'http://localhost:3085/graphql', fetch });
+const CODA_GRAPHQL_HOST = process.env["CODA_GRAPHQL_HOST"] || "localhost";
+const CODA_GRAPHQL_PORT = process.env["CODA_GRAPHQL_PORT"] || 3085;
+const CODA_GRAPHQL_PATH = process.env["CODA_GRAPHQL_PATH"] || "/graphql";
+const EXTERNAL_PORT = process.env["EXTERNAL_PORT"] || 3000;
+
+let graphqlUri = "http://" + CODA_GRAPHQL_HOST + ":" + CODA_GRAPHQL_PORT + CODA_GRAPHQL_PATH;
+
+const link = new HttpLink({ uri: graphqlUri, fetch });
 
 const hiddenFields = [
   "trackedWallets",
@@ -55,7 +62,7 @@ introspectSchema(link)
     },
   );
   
-  app.listen(3000, () => {
-    console.log('Go to http://localhost:3000/graphql to run queries!');
+  app.listen(EXTERNAL_PORT, () => {
+    console.log('Go to http://localhost:' + EXTERNAL_PORT + '/graphql to run queries!');
   });
 });
