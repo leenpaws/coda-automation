@@ -32,16 +32,16 @@ data "template_file" "container_definition" {
   }
 }
 
-resource "aws_ecs_task_definition" "faucet" {
+resource "aws_ecs_task_definition" "graphql-proxy" {
   family = local.service_name
   network_mode = "host"
   container_definitions = data.template_file.container_definition.rendered
 }
 
-resource "aws_ecs_service" "faucet" {
+resource "aws_ecs_service" "graphql-proxy" {
   name            = local.service_name
   cluster         = var.ecs_cluster_id
-  task_definition = aws_ecs_task_definition.faucet.arn
+  task_definition = aws_ecs_task_definition.graphql-proxy.arn
 
   desired_count = 1
 
