@@ -101,5 +101,5 @@ variable "use_eip" {
 
 variable "prometheus_cidr_blocks" {
   description = "One or more CIDR Blocks in use by Prometheus"
-  default = ["54.190.198.129/32", "52.10.69.244/32"]
+  default = ["18.237.92.200/32", "52.35.51.5/32"]
 }

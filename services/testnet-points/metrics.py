@@ -6,6 +6,7 @@ def snark_fees_collected(blocks):
     jobs = chain.from_iterable(block["snarkJobs"] for block in blocks)
     for job in jobs:
         count.update({ job["prover"]: int(job["fee"])})
+    print(count)
     return count
 
 def blocks_produced(blocks):

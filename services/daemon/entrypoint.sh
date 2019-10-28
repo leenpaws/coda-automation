@@ -6,6 +6,8 @@
 #       - Configured via environment variable `CODA_WALLET_KEYS`
 #       -  `CODA_WALLET_KEYS=testnet/keys/echo/0 testnet/keys/grumpus/0`
 #   - Starts coda daemon with those secrets
+#   - Optionally runs a SNARK Worker
+#   - Optionally runs a Block Producer
 
 CLEAR='\033[0m'
 RED='\033[0;31m'
@@ -16,16 +18,20 @@ function usage() {
   fi
   echo "Usage: $0"
   echo "  --dont-fetch-secrets           If set, don't fetch secrets from AWS Secrets Manager. Default: False"
-  echo "  --dont-run-daemon              If set, don't run the daemon. Default: False"
+  echo "  --no-daemon                    If set, don't run the daemon. Default: False"
+  echo "  --snark-worker-public-key      If set, run a SNARK worker using the public key passed as input."
+  echo "  --block-producer-public-key    If set, run a Block Producer using the public key passed as input."
   echo ""
   echo "Example: $0"
   exit 1
 }
 
 while [[ "$#" -gt 0 ]]; do case $1 in
-  --dont-fetch-secrets) NOFETCH=1; shift;;
-  --dont-run-daemon) NODAEMON=1; shift;;
+  --run-snark-worker) CODA_SNARK_KEY="$2"; shift;;
+  -v|--run-block-producer) CODA_PROPOSE_KEY="$2"; shift;;
   -c|--command) COMMAND="$2"; shift;;
+  --dont-fetch-secrets) NOFETCH=1; shift;;
+  --no-daemon) NODAEMON=1; shift;;
   *) echo "Unknown parameter passed: $1"; exit 1;;
 esac; shift; done
 
@@ -50,6 +56,19 @@ do
     
     key_files+=( "/wallet-keys/$pk" )
 done
+
+# Build ROLE_COMMAND
+ROLE_COMMAND=""
+if [ -n "$CODA_SNARK_KEY" ];then
+   ROLE_COMMAND+="-run-snark-worker $CODA_SNARK_KEY -snark-worker-fee 50";
+fi
+
+if [ -n "$CODA_PROPOSE_KEY" ];then
+  ROLE_COMMAND+="-propose-public-key $CODA_PROPOSE_KEY ";
+fi
+
+echo "$ROLE_COMMAND"
+
 # Run Coda Daemon
 
 # Gross Hack Alert
@@ -59,4 +78,11 @@ do
   coda advanced unsafe-import -privkey-path $file
 done
 
-coda daemon -peer $DAEMON_PEER -rest-port $DAEMON_REST_PORT -external-port $DAEMON_EXTERNAL_PORT -metrics-port $DAEMON_METRICS_PORT
+
+if [ -z "$NODAEMON" ] || [ "$NODAEMON" -eq 0 ]; then
+  set -x
+  coda daemon $ROLE_COMMAND -rest-port $DAEMON_REST_PORT -external-port $DAEMON_EXTERNAL_PORT  -discovery-port $DAEMON_DISCOVERY_PORT -metrics-port $DAEMON_METRICS_PORT \
+    -peer /ip4/52.39.56.50/tcp/8303/ipfs/12D3KooWHMmfuS9DmmK9eH4GC31arDhbtHEBQzX6PwPtQftxzwJs \
+    -peer /ip4/18.212.230.102/tcp/8303/ipfs/12D3KooWAux9MAW1yAdD8gsDbYHmgVjRvdfYkpkfX7AnyGvQaRPF \
+    -peer /ip4/52.13.17.206/tcp/8303/ipfs/12D3KooWCZA4pPWmDAkQf6riDQ3XMRN5k99tCsiRhBAPZCkA8re7
+fi

@@ -1,4 +1,4 @@
-variable "cluster_id" {
+variable "ecs_cluster_id" {
   description = "The ECS cluster ID"
   type        = string
 }
@@ -14,13 +14,13 @@ variable "testnet" {
   type        = string
 }
 
-variable "daemon_number" {
+variable "daemon_name" {
   description = "A unique value that is not shared with another deployed daemon"
   type        = string
-  default = "dev"
+  default = "dev-daemon"
 }
 
-variable "container_version" {
+variable "coda_container_version" {
   description = "The version of the container to be used when deploying the Daemon Service"
   type        = string
   default = "0.0.8-fix"
@@ -46,6 +46,16 @@ variable "aws_default_region" {
   type        = string
 }
 
+variable "coda_snark_key" {
+  description = "A Public Key to use for SNARK Work, does not need to be installed on the daemon"
+  default = ""
+}
+
+variable "coda_propose_key" {
+  description = "A Public Key to use for Block Producing, corresponding private key must be installed on the daemon"
+  default = ""
+}
+
 variable "coda_peer" {
   description = "The initial peer to start the Daemon with"
   type        = string
@@ -60,13 +70,19 @@ variable "coda_rest_port" {
 variable "coda_external_port" {
   description = "The port that the daemon will listen for RPC connections"
   type        = string
-  value = "10101"
+  default = "10101"
+}
+
+variable "coda_discovery_port" {
+  description = "The port that the daemon will listen for RPC connections"
+  type        = string
+  default = "10102"
 }
 
 variable "coda_metrics_port" {
   description = "The port that the daemon will expose prometheus metrics on"
   type        = string
-  value = "10000"
+  default = "10103"
 }
 
 variable "coda_privkey_pass" {
