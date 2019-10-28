@@ -9,8 +9,16 @@ const {
   FilterRootFields } = require('graphql-tools');
 const {HttpLink} = require('apollo-link-http');
 const fetch = require('node-fetch');
+const fs = require('fs');
 
-const link = new HttpLink({ uri: 'http://localhost:3085/graphql', fetch });
+const CODA_GRAPHQL_HOST = process.env["CODA_GRAPHQL_HOST"] || "localhost";
+const CODA_GRAPHQL_PORT = process.env["CODA_GRAPHQL_PORT"] || 3085;
+const CODA_GRAPHQL_PATH = process.env["CODA_GRAPHQL_PATH"] || "/graphql";
+const EXTERNAL_PORT = process.env["EXTERNAL_PORT"] || 3000;
+
+let graphqlUri = "http://" + CODA_GRAPHQL_HOST + ":" + CODA_GRAPHQL_PORT + CODA_GRAPHQL_PATH;
+
+const link = new HttpLink({ uri: graphqlUri, fetch });
 
 const hiddenFields = [
   "trackedWallets",
@@ -24,6 +32,8 @@ const transformers = [
   new FilterRootFields((operation, fieldName, field) => operation != 'Mutation'),
   new FilterRootFields((operation, fieldName, field) => hiddenFields.indexOf(fieldName) < 0),
 ];
+
+const graphiqlString = fs.readFileSync("./index.html");
 
 introspectSchema(link)
 .then(remoteSchema => {
@@ -43,13 +53,15 @@ introspectSchema(link)
       if (req.headers["accept"] == "application/json") {
         graphqlExpress({ schema: transformSchema(schema, transformers) })(req, res, next)
       } else {
-        graphiqlExpress({ endpointURL: '/graphql' })(req, res, next)
+        res.setHeader('Content-Type', 'text/html');
+        res.write(graphiqlString);
+        res.end();
       }
 
     },
   );
   
-  app.listen(3000, () => {
-    console.log('Go to http://localhost:3000/graphql to run queries!');
+  app.listen(EXTERNAL_PORT, () => {
+    console.log('Go to http://localhost:' + EXTERNAL_PORT + '/graphql to run queries!');
   });
 });
