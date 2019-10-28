@@ -45,5 +45,5 @@ module "conner-snarkworker" {
     coda_discovery_port = 10202
     coda_metrics_port = 10203
     coda_privkey_pass = jsondecode(data.aws_secretsmanager_secret_version.current_user_privkey_pass.secret_string)["coda_privkey_pass"]
-    #coda_snark_key = "tdNE5hh3P5aq8A9nZehrrKxsvoovxEHx9t2hDec2Novay4N6Pdq89W2YNkBbruYrhdLppwVZPqYLf1ChQiZg98MbJmcAKVfmbpeuQmn9WBmgTwD8a7SwTd1MfqPGHLon9GYVA2aw35C9mr"
+    coda_snark_key = "tdNE5hh3P5aq8A9nZehrrKxsvoovxEHx9t2hDec2Novay4N6Pdq89W2YNkBbruYrhdLppwVZPqYLf1ChQiZg98MbJmcAKVfmbpeuQmn9WBmgTwD8a7SwTd1MfqPGHLon9GYVA2aw35C9mr"
 }
