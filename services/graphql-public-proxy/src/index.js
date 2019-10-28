@@ -9,6 +9,7 @@ const {
   FilterRootFields } = require('graphql-tools');
 const {HttpLink} = require('apollo-link-http');
 const fetch = require('node-fetch');
+const fs = require('fs');
 
 const link = new HttpLink({ uri: 'http://localhost:3085/graphql', fetch });
 
@@ -24,6 +25,8 @@ const transformers = [
   new FilterRootFields((operation, fieldName, field) => operation != 'Mutation'),
   new FilterRootFields((operation, fieldName, field) => hiddenFields.indexOf(fieldName) < 0),
 ];
+
+const graphiqlString = fs.readFileSync("./index.html");
 
 introspectSchema(link)
 .then(remoteSchema => {
@@ -43,7 +46,10 @@ introspectSchema(link)
       if (req.headers["accept"] == "application/json") {
         graphqlExpress({ schema: transformSchema(schema, transformers) })(req, res, next)
       } else {
-        graphiqlExpress({ endpointURL: '/graphql' })(req, res, next)
+        // graphiqlExpress({ endpointURL: '/graphql' })(req, res, next)
+        res.setHeader('Content-Type', 'text/html');
+        res.write(graphiqlString);
+        res.end();
       }
 
     },
