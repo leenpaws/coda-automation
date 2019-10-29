@@ -34,6 +34,12 @@ variable "coda_graphql_port" {
   default     = "3085"
 }
 
+variable "proxy_external_port" {
+  description = "The port the GraphQL Proxy is listening on"
+  type        = string
+  default     = "3000"
+}
+
 # DAEMON VARIABLES
 
 variable "coda_container_version" {
@@ -70,6 +76,12 @@ variable "coda_rest_port" {
   description = "The port that the GraphQL server will listen on"
   type        = string
   default     = "3085"
+}
+
+variable "coda_discovery_port" {
+  description = "The port that the daemon will listen for RPC connections"
+  type        = string
+  default = "10102"
 }
 
 variable "coda_external_port" {

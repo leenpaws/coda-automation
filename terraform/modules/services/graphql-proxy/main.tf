@@ -18,6 +18,7 @@ data "template_file" "container_definition" {
     proxy_container_version = var.proxy_container_version
     coda_graphql_host = var.coda_graphql_host
     coda_graphql_port = var.coda_rest_port
+    proxy_external_port = var.proxy_external_port
     # Daemon Vars
     coda_container_version = var.coda_container_version
     coda_wallet_keys   = var.coda_wallet_keys
@@ -26,6 +27,7 @@ data "template_file" "container_definition" {
     aws_default_region = var.aws_default_region
     coda_peer          = var.coda_peer
     coda_rest_port     = var.coda_rest_port
+    coda_discovery_port = var.coda_discovery_port
     coda_external_port = var.coda_external_port
     coda_metrics_port  = var.coda_metrics_port
     coda_privkey_pass  = var.coda_privkey_pass
