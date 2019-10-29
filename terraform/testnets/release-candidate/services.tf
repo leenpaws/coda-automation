@@ -19,7 +19,7 @@ module "faucet" {
   fee_amount               = 10
 
   # Daemon Variables
-  coda_container_version = "0.0.10-beta"
+  coda_container_version = "0.0.10-releasecandidate"
   coda_wallet_keys       = "testnet/keys/echo/0 testnet/keys/grumpus/0"
   aws_access_key         = jsondecode(data.aws_secretsmanager_secret_version.current_daemon_aws_access_keys.secret_string)["AWS_ACCESS_KEY_ID"]
   aws_secret_key         = jsondecode(data.aws_secretsmanager_secret_version.current_daemon_aws_access_keys.secret_string)["AWS_SECRET_ACCESS_KEY"]
@@ -30,3 +30,4 @@ module "faucet" {
   coda_metrics_port      = 10000
   coda_privkey_pass      = jsondecode(data.aws_secretsmanager_secret_version.current_testnet_coda_privkey_pass.secret_string)["coda_privkey_pass"]
 }
+
