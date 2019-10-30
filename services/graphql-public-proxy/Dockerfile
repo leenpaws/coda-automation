@@ -7,7 +7,7 @@ COPY package.json yarn.lock index.html ./
 RUN yarn && \
     yarn cache clean
 
-COPY ./src index.html ./
+COPY ./src ./src/
 
 ENV CODA_GRAPHQL_HOST=localhost
 ENV CODA_GRAPHQL_PORT=8304
