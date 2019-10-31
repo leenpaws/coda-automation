@@ -4,11 +4,20 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from google.oauth2 import service_account
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
-def get_credentials():
+def get_credentials(): 
+    creds = None
+    creds = service_account.Credentials.from_service_account_file(
+    'service_credentials.json')
+
+    service = build('sheets', 'v4', credentials=creds)
+    return service.spreadsheets()
+
+def get_user_credentials():
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -21,7 +30,7 @@ def get_credentials():
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(
+            flow = InstalledAppFlow.from_serv(
                 'credentials.json', SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
