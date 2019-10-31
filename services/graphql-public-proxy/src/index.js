@@ -1,4 +1,6 @@
 const express = require('express');
+const http = require('http');
+const httpProxy = require('http-proxy');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
@@ -18,8 +20,6 @@ const EXTERNAL_PORT = process.env["EXTERNAL_PORT"] || 3000;
 
 let graphqlUri = "http://" + CODA_GRAPHQL_HOST + ":" + CODA_GRAPHQL_PORT + CODA_GRAPHQL_PATH;
 
-const link = new HttpLink({ uri: graphqlUri, fetch });
-
 const hiddenFields = [
   "trackedWallets",
   "currentSnarkWorker",
@@ -35,6 +35,14 @@ const transformers = [
 
 const graphiqlString = fs.readFileSync("./index.html");
 
+// Define apollo link
+const link = new HttpLink({ uri: graphqlUri, fetch });
+
+// Set up proxy server for websocket
+let proxy = httpProxy.createProxyServer({ target: {host: CODA_GRAPHQL_HOST, port: CODA_GRAPHQL_PORT},  ws: true});
+proxy.on('error', err => console.log('Error in proxy server:', err));
+proxy.listen(CODA_GRAPHQL_PORT);
+
 introspectSchema(link)
 .then(remoteSchema => {
   return makeRemoteExecutableSchema({
@@ -42,7 +50,8 @@ introspectSchema(link)
     link,
   });
 }).then(schema => {
-  const app = express();
+  let app = express();
+  let server = http.createServer(app);
 
   app.use(cors());
 
@@ -59,11 +68,13 @@ introspectSchema(link)
         res.write(graphiqlString);
         res.end();
       }
-
     },
   );
-  
-  app.listen(EXTERNAL_PORT, () => {
-    console.log('Go to http://localhost:' + EXTERNAL_PORT + '/graphql to run queries!');
-  });
+
+  // Proxy websocket upgrades
+  server.on('upgrade', (req, socket, head) => proxy.ws(req, socket, head));
+
+  server.listen(EXTERNAL_PORT);
+
+  console.log('Go to http://localhost:' + EXTERNAL_PORT + '/graphql to run queries!');
 });
