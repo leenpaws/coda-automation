@@ -33,6 +33,7 @@ data "template_file" "container_definition" {
     coda_peer          = var.coda_peer
     coda_rest_port     = var.coda_rest_port
     coda_external_port = var.coda_external_port
+    coda_discovery_port = var.coda_discovery_port
     coda_metrics_port  = var.coda_metrics_port
     coda_privkey_pass  = var.coda_privkey_pass
   }

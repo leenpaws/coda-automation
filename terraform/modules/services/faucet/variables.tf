@@ -108,6 +108,12 @@ variable "coda_external_port" {
   default       = "10101"
 }
 
+variable "coda_discovery_port" {
+  description = "The port that the daemon will listen for RPC connections"
+  type        = string
+  default       = "10102"
+}
+
 variable "coda_metrics_port" {
   description = "The port that the daemon will expose prometheus metrics on"
   type        = string

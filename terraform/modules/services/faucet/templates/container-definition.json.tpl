@@ -44,6 +44,7 @@
         { "name" : "DAEMON_PEER", "value" : "${coda_peer}" },
         { "name" : "DAEMON_REST_PORT", "value" : "${coda_graphql_port}" },
         { "name" : "DAEMON_EXTERNAL_PORT", "value" : "${coda_external_port}" },
+        { "name" : "DAEMON_DISCOVERY_PORT", "value" : "${coda_discovery_port}" },
         { "name" : "DAEMON_METRICS_PORT", "value" : "${coda_metrics_port}" },
         { "name" : "CODA_PRIVKEY_PASS", "value" : "${coda_privkey_pass}" }
     ]
