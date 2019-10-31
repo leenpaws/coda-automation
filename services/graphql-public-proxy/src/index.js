@@ -50,7 +50,9 @@ introspectSchema(link)
   app.use('/graphql',
     bodyParser.json(), 
     (req, res, next) => {
-      if (req.headers["accept"] == "application/json") {
+      if (req.headers["accept"] == "application/json" || req.headers["content-type"] == "application/json") {
+        req.headers["accept"] == "application/json";
+        req.headers["content-type"] == "application/json";
         graphqlExpress({ schema: transformSchema(schema, transformers) })(req, res, next)
       } else {
         res.setHeader('Content-Type', 'text/html');
