@@ -1,7 +1,7 @@
 [
   {
     "name": "graphql-proxy",
-    "image": "codaprotocol/bot:${proxy_container_version}",
+    "image": "codaprotocol/graphql-public-proxy:${proxy_container_version}",
     "cpu": 0,
     "memory": 512,
     "portMappings": [
@@ -47,7 +47,8 @@
         { "name" : "DAEMON_EXTERNAL_PORT", "value" : "${coda_external_port}" },
         { "name" : "DAEMON_DISCOVERY_PORT", "value" : "${coda_discovery_port}" },
         { "name" : "DAEMON_METRICS_PORT", "value" : "${coda_metrics_port}" },
-        { "name" : "CODA_PRIVKEY_PASS", "value" : "${coda_privkey_pass}" }
+        { "name" : "CODA_PRIVKEY_PASS", "value" : "${coda_privkey_pass}" },
+        { "name" : "CODA_TESTNET", "value" : "${coda_testnet}" }
     ]
   }
 ]
