@@ -7,7 +7,7 @@ iptables -F INPUT
 iptables -F OUTPUT
 
 # Allow list
-iplist="127.0.0.1 13.57.185.74 34.219.205.93 52.41.245.81 52.40.10.84 100.26.146.129"
+iplist="127.0.0.1 13.57.10.215 34.220.136.8 34.209.72.71 34.211.231.80 "
 for ip in ${iplist}
 do
     # Whitelist

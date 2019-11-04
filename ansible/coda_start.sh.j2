@@ -131,7 +131,7 @@ start_worker () {
     else
         DAEMON=$1
     fi
-    export OMP_NUM_THREADS=4
+    export OMP_NUM_THREADS=1
     NEW_UUID=$(cat /dev/urandom | LC_CTYPE=C tr -dc 'A-Z0-9' | fold -w 8 | head -n 1)
     echo "${NEW_UUID}"
     mkdir "test-snark-worker-${NEW_UUID}"
@@ -147,13 +147,14 @@ case $CODA_ROLE in
     sleep 10 # wait for daemon to come up
 
     CORE_COUNT=$(nproc --all)
-    CORE_SCALE=$(( CORE_COUNT / 5 ))
+    CORE_SCALE=$(( CORE_COUNT / 2 ))
     count=1
-    while [ "$(pgrep  -f 'coda internal snark-worker' | wc -l)" -lt "$CORE_SCALE" ]; do
-        echo "Worker Count: ${count}"
+    while [ "$(pgrep  -f 'coda internal snark-worker' | wc -l)" -le "$CORE_SCALE" ]; do
+        count=$(pgrep  -f 'coda internal snark-worker' | wc -l)
+        echo "Worker Count: ${count} of ${CORE_SCALE}"
         start_worker
         count=$((count+1))
-        sleep 5 # wait for daemons to stablize
+        sleep 2 # wait for daemons to stablize
     done
     ;;
 esac
