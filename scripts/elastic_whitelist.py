@@ -43,7 +43,7 @@ def ips_from_hosted_grafana():
     return(iplist)
 
 if __name__ == "__main__":
-    proposed_ips = ips_from_ec2_json() + ips_from_hosted_grafana()
+    proposed_ips = ips_from_ec2_json() + ips_from_hosted_grafana() + ['157.131.245.3']
 
     # Load sensitive config
     try:
@@ -69,12 +69,15 @@ if __name__ == "__main__":
         ap = domain['AccessPolicies']
     ap = json.loads(ap)
 
+    print(json.dumps(ap, indent=4))
+    #sys.exit(0)
     unique_proposed_ips = set(proposed_ips)
     proposed_ips = list(unique_proposed_ips)
 
     # override ips with new set (ugly)
     current_ap_ips = ap['Statement'][0]['Condition']['IpAddress']['aws:SourceIp']
     ap['Statement'][0]['Condition']['IpAddress']['aws:SourceIp'] = proposed_ips
+
 
     # Update existing access policy
     response = client.update_elasticsearch_domain_config(
