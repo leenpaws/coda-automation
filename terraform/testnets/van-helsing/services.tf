@@ -19,7 +19,7 @@ module "faucet" {
   fee_amount               = 10
 
   # Daemon Variables
-  coda_container_version = "0.0.10-beta7"
+  coda_container_version = "0.0.10-beta9"
   coda_wallet_keys       = "testnet/keys/echo/0 testnet/keys/grumpus/0"
   aws_access_key         = jsondecode(data.aws_secretsmanager_secret_version.current_daemon_aws_access_keys.secret_string)["AWS_ACCESS_KEY_ID"]
   aws_secret_key         = jsondecode(data.aws_secretsmanager_secret_version.current_daemon_aws_access_keys.secret_string)["AWS_SECRET_ACCESS_KEY"]
@@ -44,10 +44,10 @@ module "graphql-proxy" {
     proxy_container_version = "0.0.10"
     coda_graphql_host = "localhost"
     coda_graphql_port = 3085
-    proxy_external_port = 10900
+    proxy_external_port = 80
 
     # Daemon Variables
-    coda_container_version = "0.0.10-beta7"
+    coda_container_version = "0.0.10-beta9"
     coda_wallet_keys = ""
     aws_access_key = jsondecode(data.aws_secretsmanager_secret_version.current_daemon_aws_access_keys.secret_string)["AWS_ACCESS_KEY_ID"]
     aws_secret_key = jsondecode(data.aws_secretsmanager_secret_version.current_daemon_aws_access_keys.secret_string)["AWS_SECRET_ACCESS_KEY"]
@@ -57,4 +57,34 @@ module "graphql-proxy" {
     coda_external_port = 10101
     coda_metrics_port = 10000
     coda_privkey_pass = "testnet"
+    coda_archive_node = "true"
+}
+
+module "secret-graphql-proxy" {
+    #source = "github.com/codaprotocol/coda-automation/terraform/modules/services/prometheus"
+    source = "../../modules/services/graphql-proxy"
+
+    # Global Vars
+    ecs_cluster_id = "coda-services"
+    environment = "drev"
+    testnet = "van-helsing"
+
+    # Proxy Variables
+    proxy_container_version = "0.0.10"
+    coda_graphql_host = "localhost"
+    coda_graphql_port = 3086
+    proxy_external_port = 10900
+
+    # Daemon Variables
+    coda_container_version = "0.0.10-beta9"
+    coda_wallet_keys = ""
+    aws_access_key = jsondecode(data.aws_secretsmanager_secret_version.current_daemon_aws_access_keys.secret_string)["AWS_ACCESS_KEY_ID"]
+    aws_secret_key = jsondecode(data.aws_secretsmanager_secret_version.current_daemon_aws_access_keys.secret_string)["AWS_SECRET_ACCESS_KEY"]
+    aws_default_region = "us-west-2"
+    coda_peer = "van-helsing.o1test.net:8303"
+    coda_rest_port = 3086
+    coda_external_port = 10103
+    coda_metrics_port = 10004
+    coda_privkey_pass = "testnet"
+    coda_archive_node = "true"
 }

@@ -2,7 +2,7 @@ locals {
   netname        = "van-helsing"
   aws_key_name   = "testnet"
   coda_repo      = "release"
-  coda_version   = "0.0.10-beta7-6b47cff2" # Note: '*' gets latest when specifying version
+  coda_version   = "0.0.10-beta9-90edf4b9" # Note: '*' gets latest when specifying version
   ecs_cluster_id = "O1Labs-Services"
 }
 
