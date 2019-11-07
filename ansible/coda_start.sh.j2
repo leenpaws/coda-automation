@@ -64,8 +64,8 @@ echo "Using libp2p"
 CODA_SEEDLIST="\
     -discovery-port ${CODA_PEERPORT} \
     -peer /dns4/peer1-$(tr -s '_' '-' <<< {{ netname }}).o1test.net/tcp/${CODA_PEERPORT}/ipfs/12D3KooWHMmfuS9DmmK9eH4GC31arDhbtHEBQzX6PwPtQftxzwJs \
-    -peer /dns4/peer2-$(tr -s '_' '-' <<< {{ netname }}).o1test.net/tcp/${CODA_PEERPORT}/ipfs/12D3KooWAux9MAW1yAdD8gsDbYHmgVjRvdfYkpkfX7AnyGvQaRPF \
-    -peer /dns4/peer3-$(tr -s '_' '-' <<< {{ netname }}).o1test.net/tcp/${CODA_PEERPORT}/ipfs/12D3KooWCZA4pPWmDAkQf6riDQ3XMRN5k99tCsiRhBAPZCkA8re7 \
+    -peer /dns4/peer2-$(tr -s '_' '-' <<< {{ netname }}).o1test.net/tcp/${CODA_PEERPORT}/ipfs/12D3KooWCZA4pPWmDAkQf6riDQ3XMRN5k99tCsiRhBAPZCkA8re7 \
+    -peer /dns4/peer3-$(tr -s '_' '-' <<< {{ netname }}).o1test.net/tcp/${CODA_PEERPORT}/ipfs/12D3KooWAux9MAW1yAdD8gsDbYHmgVjRvdfYkpkfX7AnyGvQaRPF \
     "
 
 # Common CLI options for all roles
@@ -77,7 +77,8 @@ CLI_COMMON="\
  -config-directory /home/admin/test-coda \
  -external-ip ${EXTERNAL_IP} \
  -rest-port ${CODA_QLPORT} \
- -metrics-port ${CODA_METRICS_PORT} "
+ -metrics-port ${CODA_METRICS_PORT} \
+ -limit-concurrent-connections false "
 
 # Main start
 case $CODA_ROLE in
@@ -92,6 +93,7 @@ case $CODA_ROLE in
     CLI_ROLE="${CODA_SEEDLIST} \
     -run-snark-worker ${PUBLIC_KEY} \
     -snark-worker-fee 2 \
+    -work-reassignment-wait 900000 \
     -work-selection seq "
     ;;
 "blockproducer")
