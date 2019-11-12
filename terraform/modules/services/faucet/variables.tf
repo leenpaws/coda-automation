@@ -120,6 +120,12 @@ variable "coda_metrics_port" {
   default       = "10000"
 }
 
+variable "coda_client_port" {
+  description = "The port that the daemon will expose prometheus metrics on"
+  type        = string
+  default       = "10103"
+}
+
 variable "coda_privkey_pass" {
   description = "The password for the installed keys"
   type        = string

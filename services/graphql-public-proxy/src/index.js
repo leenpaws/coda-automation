@@ -41,7 +41,7 @@ const link = new HttpLink({ uri: graphqlUri, fetch });
 // Set up proxy server for websocket
 let proxy = httpProxy.createProxyServer({ target: {host: CODA_GRAPHQL_HOST, port: CODA_GRAPHQL_PORT},  ws: true});
 proxy.on('error', err => console.log('Error in proxy server:', err));
-proxy.listen(CODA_GRAPHQL_PORT);
+//proxy.listen(CODA_GRAPHQL_PORT);
 
 introspectSchema(link)
 .then(remoteSchema => {

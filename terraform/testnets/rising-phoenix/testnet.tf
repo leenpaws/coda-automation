@@ -1,5 +1,5 @@
 locals {
-  netname        = "release-candidate"
+  netname        = "rising-phoenix"
   aws_key_name   = "testnet"
   coda_repo      = "release"
   coda_version   = "0.0.11-beta-1834879c" # Note: '*' gets latest when specifying version
@@ -9,7 +9,7 @@ locals {
 terraform {
   required_version = "~> 0.12.0"
   backend "s3" {
-    key     = "test-net/terraform-release-candidate.tfstate"
+    key     = "test-net/terraform-rising-phoenix.tfstate"
     encrypt = true
     region  = "us-west-2"
     bucket  = "o1labs-terraform-state"

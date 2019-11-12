@@ -33,6 +33,7 @@ data "template_file" "container_definition" {
     coda_privkey_pass  = var.coda_privkey_pass
     coda_testnet  = var.testnet
     coda_archive_node = var.coda_archive_node
+    coda_client_port = var.coda_client_port
   }
 }
 
@@ -45,7 +46,8 @@ resource "aws_ecs_task_definition" "graphql-proxy" {
     name = "archive-node-storage"
 
     docker_volume_configuration {
-      scope         = "task"
+      scope         = "shared"
+      autoprovision = "true"
     }
   }
 }
