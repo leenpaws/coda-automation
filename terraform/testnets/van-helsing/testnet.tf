@@ -2,7 +2,7 @@ locals {
   netname        = "van-helsing"
   aws_key_name   = "testnet"
   coda_repo      = "release"
-  coda_version   = "0.0.10-beta3-478b0605" # Note: '*' gets latest when specifying version
+  coda_version   = "0.0.10-beta9-90edf4b9" # Note: '*' gets latest when specifying version
   ecs_cluster_id = "O1Labs-Services"
 }
 
@@ -56,6 +56,32 @@ resource "aws_route53_record" "multiseed" {
   type    = "A"
   ttl     = "300"
   records = concat(module.us-west-2-seed.public_ip, module.us-west-2-seedjoiner.public_ip, module.us-east-1-seedjoiner.public_ip)
+}
+
+# LIBP2P SEEDS PEERS
+
+resource "aws_route53_record" "peer1" {
+  zone_id = "${data.aws_route53_zone.selected.zone_id}"
+  name    = "peer1-${local.netname}.${data.aws_route53_zone.selected.name}"
+  type    = "A"
+  ttl     = "300"
+  records = module.us-west-2-seed.public_ip
+}
+
+resource "aws_route53_record" "peer2" {
+  zone_id = "${data.aws_route53_zone.selected.zone_id}"
+  name    = "peer2-${local.netname}.${data.aws_route53_zone.selected.name}"
+  type    = "A"
+  ttl     = "300"
+  records = module.us-west-2-seedjoiner.public_ip
+}
+
+resource "aws_route53_record" "peer3" {
+  zone_id = "${data.aws_route53_zone.selected.zone_id}"
+  name    = "peer3-${local.netname}.${data.aws_route53_zone.selected.name}"
+  type    = "A"
+  ttl     = "300"
+  records = module.us-east-1-seedjoiner.public_ip
 }
 
 ######################################################################

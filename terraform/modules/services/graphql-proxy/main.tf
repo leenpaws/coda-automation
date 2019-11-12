@@ -1,5 +1,5 @@
 locals {
-  service_name = "graphql-proxy-${var.testnet}"
+  service_name = "graphql-proxy-${var.testnet}-${var.environment}"
 }
 
 
@@ -31,6 +31,8 @@ data "template_file" "container_definition" {
     coda_external_port = var.coda_external_port
     coda_metrics_port  = var.coda_metrics_port
     coda_privkey_pass  = var.coda_privkey_pass
+    coda_testnet  = var.testnet
+    coda_archive_node = var.coda_archive_node
   }
 }
 
@@ -38,6 +40,14 @@ resource "aws_ecs_task_definition" "graphql-proxy" {
   family = local.service_name
   network_mode = "host"
   container_definitions = data.template_file.container_definition.rendered
+
+  volume {
+    name = "archive-node-storage"
+
+    docker_volume_configuration {
+      scope         = "task"
+    }
+  }
 }
 
 resource "aws_ecs_service" "graphql-proxy" {

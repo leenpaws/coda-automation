@@ -1,15 +1,15 @@
 locals {
-  netname        = "release-candidate"
+  netname        = "defi-hackathon"
   aws_key_name   = "testnet"
-  coda_repo      = "stable"
-  coda_version   = "270364-release-0.0.11-beta-0b9e1016-PVea9d862f" # Note: '*' gets latest when specifying version
+  coda_repo      = "develop"
+  coda_version   = "263625-develop-537e7f86-PV2ac0266a" # Note: '*' gets latest when specifying version
   ecs_cluster_id = "coda-services"
 }
 
 terraform {
   required_version = "~> 0.12.0"
   backend "s3" {
-    key     = "test-net/terraform-release-candidate.tfstate"
+    key     = "test-net/terraform-defi-hackathon.tfstate"
     encrypt = true
     region  = "us-west-2"
     bucket  = "o1labs-terraform-state"

@@ -36,6 +36,7 @@ data "template_file" "container_definition" {
     coda_discovery_port = var.coda_discovery_port
     coda_metrics_port  = var.coda_metrics_port
     coda_privkey_pass  = var.coda_privkey_pass
+    coda_testnet = var.testnet
   }
 }
 

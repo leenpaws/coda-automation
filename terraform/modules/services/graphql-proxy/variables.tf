@@ -100,3 +100,9 @@ variable "coda_privkey_pass" {
   description = "The password for the installed keys"
   type        = string
 }
+
+variable "coda_archive_node" {
+  description = "Should this be run as an archive node (set if yes, unset if not)"
+  type        = string
+  default = "false"
+}
