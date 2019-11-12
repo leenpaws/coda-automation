@@ -104,4 +104,5 @@ variable "coda_privkey_pass" {
 variable "coda_archive_node" {
   description = "Should this be run as an archive node (set if yes, unset if not)"
   type        = string
+  default = "false"
 }
