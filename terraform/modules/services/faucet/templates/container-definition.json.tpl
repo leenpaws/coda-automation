@@ -27,7 +27,7 @@
     "name": "coda-daemon",
     "image": "codaprotocol/daemon:${coda_container_version}",
     "cpu": 0,
-    "memory": 8000,
+    "memory": 6500,
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
@@ -46,6 +46,7 @@
         { "name" : "DAEMON_EXTERNAL_PORT", "value" : "${coda_external_port}" },
         { "name" : "DAEMON_DISCOVERY_PORT", "value" : "${coda_discovery_port}" },
         { "name" : "DAEMON_METRICS_PORT", "value" : "${coda_metrics_port}" },
+        { "name" : "DAEMON_CLIENT_PORT", "value" : "${coda_client_port}" },
         { "name" : "CODA_PRIVKEY_PASS", "value" : "${coda_privkey_pass}" },
         { "name" : "CODA_TESTNET", "value" : "${coda_testnet}" }
     ]
