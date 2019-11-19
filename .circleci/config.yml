@@ -120,9 +120,80 @@ jobs:
                 name: terraform destroy
                 command: cd terraform/testnets/testnet-smoke-test && terraform destroy -auto-approve
                 when: always
+    
+    graphql-proxy: 
+        docker: 
+          - image: codaprotocol/coda:toolchain-54430467ba429af285ea937d1c1da7d4b4cbde3e
+        steps: 
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: Make Sure The Image Builds
+                command: |
+                    source ./services/graphql-public-proxy/version
+                    ./scripts/release-docker.sh -s graphql-public-proxy -v $VERSION --no-upload
+            - run: 
+                name: Build and Release Docker Image
+                command: |
+                    if [[ "$CIRCLE_BRANCH" == "master" ]]; then
+                        source ./services/graphql-public-proxy/version
+                        echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
+                        ./scripts/release-docker.sh -s graphql-public-proxy -v $VERSION
+                    else
+                        echo "Feature branch, not releasing!"
+                    fi
+    
+    daemon: 
+        docker: 
+          - image: codaprotocol/coda:toolchain-54430467ba429af285ea937d1c1da7d4b4cbde3e
+        steps: 
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: Make Sure The Image Builds
+                command: |
+                    source ./services/daemon/version
+                    ./scripts/release-docker.sh -s daemon -v $VERSION --extra-args "--build-arg base_image_tag=$BASE_IMAGE_TAG" --no-upload 
+            - run: 
+                name: Build and Release Docker Image
+                command: |
+                    if [[ "$CIRCLE_BRANCH" == "master" ]]; then
+                        source ./services/graphql-public-proxy/version
+                        echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
+                        ./scripts/release-docker.sh -s graphql-public-proxy -v $VERSION --extra-args "--build-arg base_image_tag=$BASE_IMAGE_TAG"
+                    else
+                        echo "Feature branch, not releasing!"
+                    fi
+    
+    prometheus: 
+        docker: 
+          - image: codaprotocol/coda:toolchain-54430467ba429af285ea937d1c1da7d4b4cbde3e
+        steps: 
+            - checkout
+            - setup_remote_docker
+            - run:
+                name: Make Sure The Image Builds
+                command: |
+                    source ./services/prometheus/version
+                    ./scripts/release-docker.sh -s prometheus -v $VERSION --extra-args "--build-arg base_image_tag=$BASE_IMAGE_TAG" --no-upload 
+            - run: 
+                name: Build and Release Docker Image
+                command: |
+                    if [[ "$CIRCLE_BRANCH" == "master" ]]; then
+                        source ./services/prometheus/version
+                        echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
+                        ./scripts/release-docker.sh -s prometheus -v $VERSION --extra-args "--build-arg base_image_tag=$BASE_IMAGE_TAG"
+                    else
+                        echo "Feature branch, not releasing!"
+                    fi
 
 workflows:
     version: 2
+    ci: 
+        jobs: 
+            - daemon
+            - graphql-proxy
+            - prometheus
     smoke-test-auto:
         jobs:
             - terraform
