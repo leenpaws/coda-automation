@@ -2,6 +2,8 @@
 # Example:
 #   'tNciczxpMfZ4eW1ZPP9NVK2vxcm9cCHvTBWMe8Nskn2A25P1YqcdvFCD5LvgngraiCmAsnC8zWAiv5pwMYjrUwpMNYDePMQYiXX7HVMjrnB1JkEckyayvsAm2Bo4EQBWbHXD5Cxp65PZy5': 'DISCORD_USERNAME#1234',
 STAKING_CHALLENGE = {
+    'tdNDgeZGYU5MppfvYpBULVPagefvgPVip6WEqaipqwfd62yKmWVR9NjUkDVoFMTtWzbnX4QEPKLNv8z86G5xAMC1zDWRFk2266WCKNoTVnnDjosWj1CJBFAbueazAMpCsaVzLHwbpgh2ws': 
+    'WilliamGuozi#6724',
     'tdNDfH9oVR4AoapbuC7fFewMKN8hKMbhF7WhhUTQrpAR2gxbv6fqGiM68Qpk8soQVViX7RzoPETfi1xN2hLbazXhP5qczGyiasMVVWJzc6t3EF5NusvY2vWs91KjjPhZewS71LPRcotxzh':
     'Star.LI#0785',
     'tdNE3a34M3y6xwYkobTzaVgvLwiNkLwDxsQZ8ynDbTcACrRXM8iJdUL9PmSeHke7V3jgLMUSv4N9u3eoup4GKXsq3xbf2jy1N55mszTpZHDepUM2S99FrCHPUMTB5D5kR7tEywtL8adNGz':
@@ -102,6 +104,8 @@ STAKING_CHALLENGE = {
 
 # For Community Members
 OBSERVED_COMMUNITY_PUBLIC_KEYS = {
+    'tdNDgeZGYU5MppfvYpBULVPagefvgPVip6WEqaipqwfd62yKmWVR9NjUkDVoFMTtWzbnX4QEPKLNv8z86G5xAMC1zDWRFk2266WCKNoTVnnDjosWj1CJBFAbueazAMpCsaVzLHwbpgh2ws':
+    'sparkpool',
     'tNci9ERxHGkemqBmNxEWTcPgY5sn347yq6BFcUGTpve6aJpaDUgaaTEQ3rfAgYeK7KhzEbYoJvSbqQ8u88aBNtu8ALVcEeRo4ei6sGjxMsmBAJW7vwW57KLzrvou4YEMA3saq6Xqtpg3sb':
     'o1-node-snark-coordinator',
     'tNciczxpMfZ4eW1ZPP9NVK2vxcm9cCHvTBWMe8Nskn2A25P1YqcdvFCD5LvgngraiCmAsnC8zWAiv5pwMYjrUwpMNYDePMQYiXX7HVMjrnB1JkEckyayvsAm2Bo4EQBWbHXD5Cxp65PZy5':
