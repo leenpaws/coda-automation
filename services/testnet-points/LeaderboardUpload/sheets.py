@@ -12,7 +12,7 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 def get_credentials(): 
     creds = None
     creds = service_account.Credentials.from_service_account_file(
-    'service_credentials.json')
+    './service_credentials.json')
 
     service = build('sheets', 'v4', credentials=creds)
     return service.spreadsheets()
