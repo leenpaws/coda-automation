@@ -1,14 +1,15 @@
 locals {
-  netname      = "fillet-mignon"
-  aws_key_name = "testnet"
-  coda_repo    = "stable"
-  coda_version = "229876-release-0.0.8-beta-7396272b-PV666e8b6c"  # Note: '*' gets latest when specifying version
+  netname        = "defi-hackathon"
+  aws_key_name   = "testnet"
+  coda_repo      = "develop"
+  coda_version   = "263625-develop-537e7f86-PV2ac0266a" # Note: '*' gets latest when specifying version
+  ecs_cluster_id = "coda-services"
 }
 
 terraform {
   required_version = "~> 0.12.0"
   backend "s3" {
-    key     = "test-net/terraform-fillet-mignon.tfstate"
+    key     = "test-net/terraform-defi-hackathon.tfstate"
     encrypt = true
     region  = "us-west-2"
     bucket  = "o1labs-terraform-state"
@@ -55,6 +56,32 @@ resource "aws_route53_record" "multiseed" {
   type    = "A"
   ttl     = "300"
   records = concat(module.us-west-2-seed.public_ip, module.us-west-2-seedjoiner.public_ip, module.us-east-1-seedjoiner.public_ip)
+}
+
+# LIBP2P SEEDS PEERS
+
+resource "aws_route53_record" "peer1" {
+  zone_id = "${data.aws_route53_zone.selected.zone_id}"
+  name    = "peer1-${local.netname}.${data.aws_route53_zone.selected.name}"
+  type    = "A"
+  ttl     = "300"
+  records = module.us-west-2-seed.public_ip
+}
+
+resource "aws_route53_record" "peer2" {
+  zone_id = "${data.aws_route53_zone.selected.zone_id}"
+  name    = "peer2-${local.netname}.${data.aws_route53_zone.selected.name}"
+  type    = "A"
+  ttl     = "300"
+  records = module.us-west-2-seedjoiner.public_ip
+}
+
+resource "aws_route53_record" "peer3" {
+  zone_id = "${data.aws_route53_zone.selected.zone_id}"
+  name    = "peer3-${local.netname}.${data.aws_route53_zone.selected.name}"
+  type    = "A"
+  ttl     = "300"
+  records = module.us-east-1-seedjoiner.public_ip
 }
 
 ######################################################################
