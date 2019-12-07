@@ -4,7 +4,7 @@
 STAKING_CHALLENGE = {
     'tdNEDdTE3BdcmopBvBGwdABXHySBvd2GqQruriNqK4qxLdBsu2xJqQ9wR3PRAthSFDopgHzmQJtr9TmShDZdQoJCLC4mhQ8EGFi1KwYnjBFYvATwijUN5UzSrgmHJ87M6Fx3tbu87QAMTr': 
     'stevenhq#2903',
-    'tdNDgeZGYU5MppfvYpBULVPagefvgPVip6WEqaipqwfd62yKmWVR9NjUkDVoFMTtWzbnX4QEPKLNv8z86G5xAMC1zDWRFk2266WCKNoTVnnDjosWj1CJBFAbueazAMpCsaVzLHwbpgh2ws': 
+    'tdNDgeZGYU5MppfvYpBULVPagefvgPVip6WEqaipqwfd62yKmWVR9NjUkDVoFMTtWzbnX4QEPKLNv8z86G5xAMC1zDWRFk2266WCKNoTVnnDjosWj1CJBFAbueazAMpCsaVzLHwbpgh2ws':
     'WilliamGuozi#6724 | Sparkpool',
     'tdNDfH9oVR4AoapbuC7fFewMKN8hKMbhF7WhhUTQrpAR2gxbv6fqGiM68Qpk8soQVViX7RzoPETfi1xN2hLbazXhP5qczGyiasMVVWJzc6t3EF5NusvY2vWs91KjjPhZewS71LPRcotxzh':
     'Star.LI#0785',
@@ -21,7 +21,7 @@ STAKING_CHALLENGE = {
     'tdNDgDbHfQZwFA2D53bUCtAheozMs4nRFP1jxfdhZsMvBVDGro5PeYYrAL4NUmqyVGgmxS6kmjebSJTVt57QPwwy8GPQzoGGjYo67mgmUB3if2ZYT2mCe7od7YiQoFG9ccQsnkarxx1eH3':
     'Kai',
     'tdNEL3uRAqs55Yf1dLch1y1q2Rr6cTzF929N4nG5K5q5mprjGah77pt61dpKXLp6jm51p64f3QUibTFiNmXGL8mjVd1aUuWqhhedG9PZ39v5mMBk3yDpDgpovtDYhZXRUyAznzwzDTD9LA':
-    '_pk_#9983',
+    'pk#9983',
     'tdNEJC1j1xYpY7SdUEurBEyDQpPbCnAYefsqmCcRbNx42VWaGq5GsvsxRQuxVuvH3GmLVbhSPuST9GWBeLEB8LGP7QHQjAUTpLkHfdW1GUV2S4aQQH86ut3BRx1q7ZaKijrYpoQJN7mn5p':
     'Prague#9624',
     'tdNDdNds43P9AY8DUWfYbcbiBwCJazeNLM6VoRabTfZyq3CFgdA89PaZVCAdoZiY2QJtCxTXxeUimE6tFVEjqxiFgQ5FNg68791rBMU8suwbyR28ER1sVng7tQZV9CAckx7gZ5NYakdAW9':
@@ -101,7 +101,9 @@ STAKING_CHALLENGE = {
     'tdNENEjBATBq6eLjfgc8QP23ePgyfQkYcdutjNysgH57Ms1QfXNo6qusm1eEprszssinm8v1fsPL5ZiNBeKf2FTJGNAyXHsREryG2xDYGRmQUWYm7aFcMMAPLZpASXjGmYWMjKFGFMgEuf':
     'tarcieri | iqlusion.io#0590',
     'tdNDfinzLUS4YThMYo7jB7h3XKTRk3EPPN82nE67YUPxieBeRZrRdgsDHxMFtVZcZ1Lu8rsdznECvSkAcTQR3qtTBWTWvmvwDVmc6PWPk6xYE8LHkJRrQi7UHXe6KVDVh5YbBrKm8TXUfv':
-    'Viktor#0766'
+    'Viktor#0766',
+    'tdNE5uAzFmcwxFR9XFVqrEu69ymkapEFwosHKeioxQFzuzkxF7jFdDBCJhennaiHctiin2bNfC8MSXCKSRMBpveJpGVzWwNrjsqe6EXf6eViqrVVu5VNiPsCgBmH6JcW6eBWxjQaubM2Yo':
+    'karmoussa95#6768'
 }
 
 # For Community Members
