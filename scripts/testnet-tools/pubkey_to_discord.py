@@ -19,7 +19,7 @@ STAKING_CHALLENGE = {
     'tdNDgDbHfQZwFA2D53bUCtAheozMs4nRFP1jxfdhZsMvBVDGro5PeYYrAL4NUmqyVGgmxS6kmjebSJTVt57QPwwy8GPQzoGGjYo67mgmUB3if2ZYT2mCe7od7YiQoFG9ccQsnkarxx1eH3':
     'Kai',
     'tdNEL3uRAqs55Yf1dLch1y1q2Rr6cTzF929N4nG5K5q5mprjGah77pt61dpKXLp6jm51p64f3QUibTFiNmXGL8mjVd1aUuWqhhedG9PZ39v5mMBk3yDpDgpovtDYhZXRUyAznzwzDTD9LA':
-    '_pk_#9983',
+    'pk#9983',
     'tdNEJC1j1xYpY7SdUEurBEyDQpPbCnAYefsqmCcRbNx42VWaGq5GsvsxRQuxVuvH3GmLVbhSPuST9GWBeLEB8LGP7QHQjAUTpLkHfdW1GUV2S4aQQH86ut3BRx1q7ZaKijrYpoQJN7mn5p':
     'Prague#9624',
     'tdNDdNds43P9AY8DUWfYbcbiBwCJazeNLM6VoRabTfZyq3CFgdA89PaZVCAdoZiY2QJtCxTXxeUimE6tFVEjqxiFgQ5FNg68791rBMU8suwbyR28ER1sVng7tQZV9CAckx7gZ5NYakdAW9':
@@ -99,7 +99,9 @@ STAKING_CHALLENGE = {
     'tdNENEjBATBq6eLjfgc8QP23ePgyfQkYcdutjNysgH57Ms1QfXNo6qusm1eEprszssinm8v1fsPL5ZiNBeKf2FTJGNAyXHsREryG2xDYGRmQUWYm7aFcMMAPLZpASXjGmYWMjKFGFMgEuf':
     'tarcieri | iqlusion.io#0590',
     'tdNDfinzLUS4YThMYo7jB7h3XKTRk3EPPN82nE67YUPxieBeRZrRdgsDHxMFtVZcZ1Lu8rsdznECvSkAcTQR3qtTBWTWvmvwDVmc6PWPk6xYE8LHkJRrQi7UHXe6KVDVh5YbBrKm8TXUfv':
-    'Viktor#0766'
+    'Viktor#0766',
+    'tdNE5uAzFmcwxFR9XFVqrEu69ymkapEFwosHKeioxQFzuzkxF7jFdDBCJhennaiHctiin2bNfC8MSXCKSRMBpveJpGVzWwNrjsqe6EXf6eViqrVVu5VNiPsCgBmH6JcW6eBWxjQaubM2Yo':
+    'karmoussa95#6768'
 }
 
 # For Community Members
@@ -493,9 +495,7 @@ OBSERVED_COMMUNITY_PUBLIC_KEYS = {
     'tNcikquYryJPeCTEFEtUj85rdZkuLsH5QJV1kbY1xJQr6RcrHSHMtAKqbZ3Xz5rCzTXLzaJvixco1V4zgZJNPxArSmD783dhs9zaB8U1txc8LPGf5ecyLuB3Z3vR3CbETrCaEGN4ANEyWt':
     'novy',
     'tNcimm3CnFATS2WUL9WJuGv8nXzsRTLCQCcuCbAAoixT5KeA8cUhTkddcyEBikG4baP3MMUMgTxm2R2L9C3HMcWA626qrRDZXgFVX5nvZeFPH7WcMdVmN9tSrvrLB6YPig3XHeKV7Hu9rP':
-    'Alexander',
-    'tdNE5uAzFmcwxFR9XFVqrEu69ymkapEFwosHKeioxQFzuzkxF7jFdDBCJhennaiHctiin2bNfC8MSXCKSRMBpveJpGVzWwNrjsqe6EXf6eViqrVVu5VNiPsCgBmH6JcW6eBWxjQaubM2Yo':
-    'karmoussa95#6768'
+    'Alexander'
 }
 
 # For O(1) Staff
