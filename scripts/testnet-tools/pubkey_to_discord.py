@@ -105,7 +105,9 @@ STAKING_CHALLENGE = {
     'tdNE5uAzFmcwxFR9XFVqrEu69ymkapEFwosHKeioxQFzuzkxF7jFdDBCJhennaiHctiin2bNfC8MSXCKSRMBpveJpGVzWwNrjsqe6EXf6eViqrVVu5VNiPsCgBmH6JcW6eBWxjQaubM2Yo':
     'karmoussa95#6768',
     'tdNDp9xjgojxDAQYHWWKpHV82rHEmN9amo2DPW9G9UiysoGTta4Ca1h7aV2iv5kp1FK9dfFpCbU9R6JknmJCqaG1tPMcE5nqGN6ykeR78ApqWvw2HEoPs6Pzcs6up36nUAqSpVAP6G7JpV':
-    'Adorid (hashpool.eu)#1293'
+    'Adorid (hashpool.eu)#1293',
+    'tdNE8HePoW9mu51BicAbg1nZiz26V5Ay7ajHeM3fT9UFwJNoNvwuQBH11Eyk3UcSi8UCWHqXfeC1he9C3XLx8c3jeQ3iR2KsoLfpQ1ssxEthVMtmFjVDxCrWmNi4FuY6fwWjZV13f7DzNm':
+    'skultra'
 }
 
 # For Community Members
