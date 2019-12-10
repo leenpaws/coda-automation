@@ -103,7 +103,7 @@ STAKING_CHALLENGE = {
     'tdNDfinzLUS4YThMYo7jB7h3XKTRk3EPPN82nE67YUPxieBeRZrRdgsDHxMFtVZcZ1Lu8rsdznECvSkAcTQR3qtTBWTWvmvwDVmc6PWPk6xYE8LHkJRrQi7UHXe6KVDVh5YbBrKm8TXUfv':
     'Viktor#0766',
     'tdNE5uAzFmcwxFR9XFVqrEu69ymkapEFwosHKeioxQFzuzkxF7jFdDBCJhennaiHctiin2bNfC8MSXCKSRMBpveJpGVzWwNrjsqe6EXf6eViqrVVu5VNiPsCgBmH6JcW6eBWxjQaubM2Yo':
-    'karmoussa95#6768'
+    'karmoussa95#6768',
     'tdNDp9xjgojxDAQYHWWKpHV82rHEmN9amo2DPW9G9UiysoGTta4Ca1h7aV2iv5kp1FK9dfFpCbU9R6JknmJCqaG1tPMcE5nqGN6ykeR78ApqWvw2HEoPs6Pzcs6up36nUAqSpVAP6G7JpV':
     'Adorid (hashpool.eu)#1293'
 }
